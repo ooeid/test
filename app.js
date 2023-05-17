@@ -30,7 +30,7 @@ export function handleSummary(data) {
 }
 
 export default function () {
-  http.get('https://ideas.media.gov.sa/');
+  http.get('https://ideas.media.gov.sa:443/');
   sleep(0.5);
 }
 
