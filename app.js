@@ -5,8 +5,11 @@ import { textSummary } from "https://jslib.k6.io/k6-summary/0.0.1/index.js";
 
 
 export const options = {
-  vus: 5,
-  duration: '60s',
+  stages: [
+    { target: 100000, duration: '1m' },
+    { target: 200000, duration: '1m' },
+    { target: 500000, duration: '1m' },
+  ],
   ext: {
     loadimpact: {
       distribution: {
@@ -28,6 +31,6 @@ export function handleSummary(data) {
 
 export default function () {
   http.get('https://ideas.media.gov.sa/');
-
+  sleep(0.5);
 }
 
