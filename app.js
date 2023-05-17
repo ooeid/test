@@ -6,12 +6,14 @@ import { textSummary } from "https://jslib.k6.io/k6-summary/0.0.1/index.js";
 
 export const options = {
   vus: 5,
-  duration: '10s',
+  duration: '60s',
   ext: {
     loadimpact: {
       distribution: {
-        distributionLabel1: { loadZone: 'amazon:bh:bahrain', percent: 50 },
-        distributionLabel2: { loadZone: 'amazon:fr:paris', percent: 50 },
+        distributionLabel1: { loadZone: 'amazon:bh:bahrain', percent: 60 },
+        distributionLabel2: { loadZone: 'amazon:fr:paris', percent: 15 },
+        distributionLabel3: { loadZone: 'amazon:it:milan', percent: 15 },
+        distributionLabel4: { loadZone: 'amazon:de:frankfurt', percent: 10 },
       },
     },
   },
